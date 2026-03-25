@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const books = [ 
+  { title: 'Book A', author: 'Author 1' }, 
+  { title: 'Book B', author: 'Author 2' }, 
+  { title: 'Book C', author: 'Author 3' }, 
+];
+
+// Ask user for a title
+let searchTitle = prompt("Enter book title:");
+
+// Find index of the book
+let index = books.findIndex(book => book.title === searchTitle);
+
+if (index !== -1) {
+  console.log(`The book "${searchTitle}" is at index ${index}.`);
+} else {
+  console.log(`Book titled "${searchTitle}" not found.`);
+}
+
+    </script>
+    
+</body>
+</html>
