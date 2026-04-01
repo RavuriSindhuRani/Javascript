@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="myh1"></h1>
+    <button onclick="starttimer()">start</button>
+    <button onclick="pausetimer()">pause</button>
+    <button onclick="resettimer()">reset</button>
+    <script>
+        var sec=0,mins=0,hours=0;
+        var strore;
+        function starttimer(){
+            store = setInterval(timer,1000)
+        }
+        function pausetimer(){
+            clearInterval(store)
+        }
+        function resettimer(){
+            sec=0,mins=0,hours=0
+            document.getElementById("myh1").innerHTML=`${hours.toString().padStart(2,"0")}hrs:
+                                                       ${mins.toString().padStart(2,"0")}mins:
+                                                       ${sec.toString().padStart(2,"0")}secs:`
+        }
+        function timer(){
+            sec++
+            if(sec==59){
+                mins++
+                sec = 0
+            }
+            if(mins==59){
+                hours++
+                mins=0,sec=0
+            }
+
+        
+        document.getElementById("myh1").innerHTML=`${hours.toString().padStart(2,"0")}hrs:
+                                                       ${mins.toString().padStart(2,"0")}mins:
+                                                       ${sec.toString().padStart(2,"0")}secs:`
+        }
+
+    </script>
+</body>
+</html>
